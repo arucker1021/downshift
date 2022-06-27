@@ -523,11 +523,18 @@ class Downshift extends Component {
             const itemCount = this.getItemCount()
             if (itemCount > 0) {
               const {highlightedIndex} = this.getState()
-              const nextHighlightedIndex = getNextWrappingIndex(
+              let nextHighlightedIndex = getNextWrappingIndex(
                 1,
                 highlightedIndex,
                 itemCount,
                 index => this.getItemNodeFromIndex(index),
+              )
+              nextHighlightedIndex = getNextNonDisabledIndex(
+                1,
+                nextHighlightedIndex-1,
+                itemCount,
+                index => this.getItemNodeFromIndex(index),
+                false,
               )
 
               this.setHighlightedIndex(nextHighlightedIndex, {
@@ -557,11 +564,18 @@ class Downshift extends Component {
             const itemCount = this.getItemCount()
             if (itemCount > 0) {
               const {highlightedIndex} = this.getState()
-              const nextHighlightedIndex = getNextWrappingIndex(
+              let nextHighlightedIndex = getNextWrappingIndex(
                 -1,
                 highlightedIndex,
                 itemCount,
                 index => this.getItemNodeFromIndex(index),
+              )
+              nextHighlightedIndex = getNextNonDisabledIndex(
+                -1,
+                nextHighlightedIndex+1,
+                itemCount,
+                index => this.getItemNodeFromIndex(index),
+                false,
               )
 
               this.setHighlightedIndex(nextHighlightedIndex, {
