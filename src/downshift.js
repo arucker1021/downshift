@@ -570,6 +570,7 @@ class Downshift extends Component {
                 itemCount,
                 index => this.getItemNodeFromIndex(index),
               )
+              console.log(nextHighlightedIndex)
               nextHighlightedIndex = getNextNonDisabledIndex(
                 -1,
                 nextHighlightedIndex+1,
