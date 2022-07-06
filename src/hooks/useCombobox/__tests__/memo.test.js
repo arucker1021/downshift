@@ -16,6 +16,7 @@ test('will skip disabled items after component rerenders and items are memoized'
       <MemoizedItem
         key={props.index}
         disabled={props.index === items.length - 2}
+        aria-disabled={props.index === items.length - 2}
         {...props}
       />
     )

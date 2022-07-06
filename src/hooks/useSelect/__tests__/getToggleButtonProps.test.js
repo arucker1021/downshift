@@ -73,7 +73,7 @@ describe('getToggleButtonProps', () => {
     test('omit event handlers when disabled', () => {
       const {result} = renderUseSelect()
       const toggleButtonProps = result.current.getToggleButtonProps({
-        disabled: true,
+        disabled: true, 'aria-disabled': true,
       })
 
       expect(toggleButtonProps.onClick).toBeUndefined()

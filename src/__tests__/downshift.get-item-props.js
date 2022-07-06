@@ -143,7 +143,7 @@ test('getItemProps logs error when no item is given', () => {
 // in IE11... no thank you 🙅)
 test(`getItemProps doesn't include event handlers when disabled is passed (for IE11 support)`, () => {
   const {getItemProps} = setupWithDownshiftController()
-  const props = getItemProps({item: 'dog', disabled: true})
+  const props = getItemProps({item: 'dog', disabled: true, 'aria-disabled': true})
   const entry = Object.entries(props).find(
     ([key, value]) => key !== 'onMouseDown' && typeof value === 'function',
   )
@@ -157,9 +157,9 @@ test(`getItemProps doesn't include event handlers when disabled is passed (for I
 
 test(`disabled item can't be selected by pressing enter`, () => {
   const items = [
-    {item: 'Chess', disabled: true},
-    {item: 'Dominion', disabled: true},
-    {item: 'Checkers', disabled: true},
+    {item: 'Chess', disabled: true, 'aria-disabled': true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
+    {item: 'Checkers', disabled: true, 'aria-disabled': true},
   ]
   const utils = renderDownshift({items})
   const {input, arrowDownInput, enterOnInput, changeInputValue} = utils
@@ -180,7 +180,7 @@ test(`disabled item can't be selected by pressing enter`, () => {
 test(`disabled item can't be highlighted when navigating via keyDown`, () => {
   const items = [
     {item: 'Chess'},
-    {item: 'Dominion', disabled: true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
     {item: 'Checkers'},
     {item: 'Backgammon'},
   ]
@@ -200,8 +200,8 @@ test(`disabled item can't be highlighted and may wrap when navigating via keyDow
   const items = [
     {item: 'Chess'},
     {item: 'Dominion'},
-    {item: 'Checkers', disabled: true},
-    {item: 'Backgammon', disabled: true},
+    {item: 'Checkers', disabled: true, 'aria-disabled': true},
+    {item: 'Backgammon', disabled: true, 'aria-disabled': true},
   ]
   const utils = renderDownshift({items, props: {initialHighlightedIndex: 1}})
   const {input, arrowDownInput, enterOnInput} = utils
@@ -218,7 +218,7 @@ test(`disabled item can't be highlighted and may wrap when navigating via keyDow
 test(`disabled item can't be highlighted when navigating via keyUp`, () => {
   const items = [
     {item: 'Chess'},
-    {item: 'Dominion', disabled: true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
     {item: 'Checkers'},
     {item: 'Backgammon'},
   ]
@@ -235,8 +235,8 @@ test(`disabled item can't be highlighted when navigating via keyUp`, () => {
 
 test(`disabled item can't be highlighted and it may wrap when navigating via keyUp`, () => {
   const items = [
-    {item: 'Chess', disabled: true},
-    {item: 'Dominion', disabled: true},
+    {item: 'Chess', disabled: true, 'aria-disabled': true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
     {item: 'Checkers'},
     {item: 'Backgammon'},
   ]
@@ -255,8 +255,8 @@ test(`disabled item can't be highlighted when navigating via end`, () => {
   const items = [
     {item: 'Backgammon'},
     {item: 'Chess'},
-    {item: 'Dominion', disabled: true},
-    {item: 'Checkers', disabled: true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
+    {item: 'Checkers', disabled: true, 'aria-disabled': true},
   ]
   const utils = renderDownshift({items})
   const {input, endOnInput, enterOnInput} = utils
@@ -271,8 +271,8 @@ test(`disabled item can't be highlighted when navigating via end`, () => {
 
 test(`disabled item can't be highlighted when navigating via home`, () => {
   const items = [
-    {item: 'Chess', disabled: true},
-    {item: 'Dominion', disabled: true},
+    {item: 'Chess', disabled: true, 'aria-disabled': true},
+    {item: 'Dominion', disabled: true, 'aria-disabled': true},
     {item: 'Checkers'},
     {item: 'Backgammon'},
   ]
@@ -289,7 +289,7 @@ test(`disabled item can't be highlighted when navigating via home`, () => {
 
 test(`highlight wrapping works with disabled items upwards`, () => {
   const items = [
-    {item: 'Chess', disabled: true},
+    {item: 'Chess', disabled: true, 'aria-disabled': true},
     {item: 'Dominion'},
     {item: 'Checkers'},
   ]
@@ -308,7 +308,7 @@ test(`highlight wrapping works with disabled items downwards`, () => {
   const items = [
     {item: 'Chess'},
     {item: 'Dominion'},
-    {item: 'Checkers', disabled: true},
+    {item: 'Checkers', disabled: true, 'aria-disabled': true},
   ]
   const utils = renderDownshift({items, props: {initialHighlightedIndex: 1}})
   const {input, arrowDownInput, enterOnInput} = utils

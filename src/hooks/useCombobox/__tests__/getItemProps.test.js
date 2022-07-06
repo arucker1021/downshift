@@ -51,7 +51,7 @@ describe('getItemProps', () => {
     test("handlers are not called if it's disabled", () => {
       const {result} = renderUseCombobox()
       const itemProps = result.current.getItemProps({
-        disabled: true,
+        disabled: true, 'aria-disabled': true,
         index: 0,
       })
 

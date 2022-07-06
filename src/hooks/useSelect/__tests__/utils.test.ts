@@ -51,7 +51,10 @@ describe('getItemIndexByCharacterKey', () => {
         itemToString,
         getItemNodeFromIndex: jest
           .fn()
-          .mockImplementation(index => ({hasAttribute: () => index === 1})),
+          .mockImplementation(index => ({
+            hasAttribute: () => index === 1,
+            getAttribute: () => true,
+          })),
       }),
     ).toEqual(4)
   })

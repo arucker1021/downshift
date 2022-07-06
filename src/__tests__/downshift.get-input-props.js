@@ -633,7 +633,7 @@ test('Enter when there is no item at index 0 still selects the highlighted item'
 // in IE11... no thank you 🙅)
 test(`getInputProps doesn't include event handlers when disabled is passed (for IE11 support)`, () => {
   const {getInputProps} = setupWithDownshiftController()
-  const props = getInputProps({disabled: true})
+  const props = getInputProps({disabled: true, 'aria-disabled': true})
   const entry = Object.entries(props).find(
     ([_key, value]) => typeof value === 'function',
   )

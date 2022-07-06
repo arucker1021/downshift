@@ -104,7 +104,7 @@ describe('getInputProps', () => {
     test("handlers are not called if it's disabled", () => {
       const {result} = renderUseCombobox()
       const inputProps = result.current.getInputProps({
-        disabled: true,
+        disabled: true, 'aria-disabled': true,
       })
 
       expect(inputProps.onChange).toBeUndefined()

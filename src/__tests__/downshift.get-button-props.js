@@ -85,7 +85,7 @@ test('getToggleButtonProps returns all given props', () => {
 // in IE11... no thank you 🙅)
 test(`getToggleButtonProps doesn't include event handlers when disabled is passed (for IE11 support)`, () => {
   const {getToggleButtonProps} = setup()
-  const props = getToggleButtonProps({disabled: true})
+  const props = getToggleButtonProps({disabled: true, 'aria-disabled': true})
   const entry = Object.entries(props).find(
     ([_key, value]) => typeof value === 'function',
   )

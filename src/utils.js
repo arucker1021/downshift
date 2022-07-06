@@ -385,7 +385,7 @@ function getNextNonDisabledIndex(
     }
   } else {
     for (let index = baseIndex - 1; index >= 0; index--) {
-      if (!getItemNodeFromIndex(_index).hasAttribute('aria-disabled') || getItemNodeFromIndex(index).getAttribute('aria-disabled') ==='false') {
+      if (!getItemNodeFromIndex(index).hasAttribute('aria-disabled') || getItemNodeFromIndex(index).getAttribute('aria-disabled') ==='false') {
         return index
       }
     }

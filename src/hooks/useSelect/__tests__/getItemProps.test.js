@@ -51,7 +51,7 @@ describe('getItemProps', () => {
       const {result} = renderUseSelect()
       const itemProps = result.current.getItemProps({
         index: 0,
-        disabled: true,
+        disabled: true, 'aria-disabled': true,
       })
 
       expect(itemProps.onMouseMove).toBeUndefined()
