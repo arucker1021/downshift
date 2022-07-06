@@ -598,7 +598,7 @@ class Downshift extends Component {
         event.preventDefault()
         const item = this.items[highlightedIndex]
         const itemNode = this.getItemNodeFromIndex(highlightedIndex)
-        if (item == null || (itemNode && itemNode.hasAttribute('disabled'))) {
+        if (item == null || (itemNode && itemNode.hasAttribute('aria-disabled') && itemNode.getAttribute('aria-disabled') ==='true')) {
           return
         }
         this.selectHighlightedItem({

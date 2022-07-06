@@ -25,7 +25,7 @@ export function getItemIndexByCharacterKey<Item>({
     ) {
       const element = getItemNodeFromIndex(offsetIndex)
 
-      if (!element?.hasAttribute('disabled')) {
+      if (!element?.hasAttribute('aria-disabled') || element.getAttribute('aria-disabled') ==='false') {
         return offsetIndex
       }
     }

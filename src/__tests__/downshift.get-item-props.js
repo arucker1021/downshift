@@ -166,7 +166,7 @@ test(`disabled item can't be selected by pressing enter`, () => {
 
   const firstItem = screen.queryByTestId('item-0')
   // eslint-disable-next-line jest-dom/prefer-enabled-disabled
-  expect(firstItem).toHaveAttribute('disabled')
+  expect(firstItem).toHaveAttribute('aria-disabled')
 
   changeInputValue('c')
   // ↓

@@ -373,19 +373,19 @@ function getNextNonDisabledIndex(
   circular,
 ) {
   const currentElementNode = getItemNodeFromIndex(baseIndex)
-  if (!currentElementNode || !currentElementNode.hasAttribute('disabled')) {
+  if (!currentElementNode || !currentElementNode.hasAttribute('aria-disabled') || currentElementNode.getAttribute('aria-disabled') ==='false') {
     return baseIndex
   }
 
   if (moveAmount > 0) {
     for (let index = baseIndex + 1; index < itemCount; index++) {
-      if (!getItemNodeFromIndex(index).hasAttribute('disabled')) {
+      if (!getItemNodeFromIndex(index).hasAttribute('aria-disabled') || getItemNodeFromIndex(index).getAttribute('aria-disabled') ==='false') {
         return index
       }
     }
   } else {
     for (let index = baseIndex - 1; index >= 0; index--) {
-      if (!getItemNodeFromIndex(index).hasAttribute('disabled')) {
+      if (!getItemNodeFromIndex(_index).hasAttribute('aria-disabled') || getItemNodeFromIndex(index).getAttribute('aria-disabled') ==='false') {
         return index
       }
     }
