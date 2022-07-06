@@ -193,12 +193,6 @@ function useSelect(userProps = {}) {
   useEffect(() => {
     isInitialMountRef.current = false
   }, [])
-  // Reset itemRefs on close.
-  useEffect(() => {
-    if (!isOpen) {
-      itemRefs.current = {}
-    }
-  }, [isOpen])
 
   // Event handler functions.
   const toggleButtonKeyDownHandlers = useMemo(
