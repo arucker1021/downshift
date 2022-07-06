@@ -1,3 +1,5 @@
+**Note** This is a forked package from the original downshift with some accessibility differences based on `aria-disabled` rather than `disabled`.
+
 <h1 align="center">
   downshift 🏎
   <br>

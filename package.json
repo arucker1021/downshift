@@ -162,10 +162,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/downshift-js/downshift.git"
+    "url": "https://github.com/arucker1021/downshift.git"
   },
   "bugs": {
-    "url": "https://github.com/downshift-js/downshift/issues"
+    "url": "https://github.com/arucker1021/downshift/issues"
   },
   "homepage": "https://downshift-js.com",
   "flow-coverage-report": {
