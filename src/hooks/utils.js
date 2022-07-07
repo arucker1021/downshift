@@ -303,7 +303,7 @@ function getHighlightedIndexOnOpen(props, state, offset, getItemNodeFromIndex) {
     return -1
   }
 
-  if (offset < 0)
+  if (offset < 0) {
     return getNextWrappingIndex(
       offset,
       -1,
@@ -311,7 +311,7 @@ function getHighlightedIndexOnOpen(props, state, offset, getItemNodeFromIndex) {
       getItemNodeFromIndex,
       false,
     )
-
+  }
   return getNextWrappingIndex(
     offset,
     items.length,
